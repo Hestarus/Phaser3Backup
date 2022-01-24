@@ -11,7 +11,7 @@ function update(){
 		            
 		            if(this.backgrounds[i][j].x <= -(1366/2)){
 		                
-		                var diff = this.backgrounds[i][j].x + (1366/2);
+		                var diff = this.backgrounds[i][j].x + (1366/2);//1366/2
 		                
 		                this.backgrounds[i][j].x = 1366 + 1366/2 + diff
 		            }
@@ -65,9 +65,12 @@ function update(){
 		         
 		         this.isGameRunning = false;
 		         
+		         this.snd_dead.play();
+		         this.trail.setVisible(false);
+		         
 		         if(this.charaTweens != null){
 		             this.charaTweens.stop();
-		         }
+		         } 
 		         
 		         let myScene = this;
 		         
@@ -85,6 +88,9 @@ function update(){
 		    
 		    if(this.chara.y < -50){
 		        this.isGameRunning = false;
+		        
+		        this.snd_dead.play();
+		        this.trail.setVisible(false);
 		        
 		        if(this.charaTweens != null){
 		            this.charaTweens.stop();
