@@ -14,9 +14,6 @@ function create() {
         'BOOTOM': game.canvas.height,
     };
 
-
-    // mengisikan variabel global dengan musik latar jika
-    // variabel snd_ambience masih kosong
     if (snd_ambience == null) {
         snd_ambience = this.sound.add('snd_ambience');
         snd_ambience.loop = true;
@@ -80,13 +77,9 @@ function create() {
     // menambahkan sprite tombol Play ke dalam scene
     var btnPlay = this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER, 'btn_play');
     btnPlay.setDepth(10);
-
     btnPlay.setInteractive();
-
-    // mengatur scale awal btnPlay menjadi 0
     btnPlay.setScale(0);
 
-    // menambahkan animasi ke tombol play
     this.tweens.add({
         targets: btnPlay,
         ease: 'Back',
@@ -96,14 +89,10 @@ function create() {
         scaleY: 1,
     });
 
-    // menambahkan judul game
     var titleGame = this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER, 'title_game');
     titleGame.setDepth(10);
-
-    // mengurangi posisi y judul game sebanyak 384 piksel
     titleGame.y -= 384;
 
-    // menambahkan animasi judul game
     this.tweens.add({
         ease: 'Bounce.easeOut',
         targets: titleGame,
@@ -117,9 +106,7 @@ function create() {
         }
     });
 
-    // ========== MENAMPILKAN SKOR TERTINGGI YANG DIDAPATKAN =========
-
-    // variabel untuk menampung menampung skor tertinggi yang sudah pernah dicapai
+    //=======Menampung Nilai Tertinggi=====
     var skorTertinggi = localStorage["highscore"] || 0;
 
     // membuat panel nilai
