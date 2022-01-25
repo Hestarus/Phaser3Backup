@@ -21,13 +21,13 @@ function create(){
     }
     
     this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER, 'bg_start');
-    var panel = this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER, 'panel_skor');
+    var panel = this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER, 'panel');
     panel.setOrigin(0.5);
     panel.setDepth(10);
     panel.setAlpha(0.8);
     
     this.score = localStorage["highscore_LB"];
-    var label_score = this.add.text(panel.x + 25, panel.y, "Score Terakhir: "+ this.score);
+    var label_score = this.add.text(panel.x - 85, panel.y -170, "Score Terakhir: "+ this.score);
     label_score.setOrigin(0.5);
     label_score.setDepth(10);
     label_score.setFontSize(30);
