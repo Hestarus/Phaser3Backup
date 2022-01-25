@@ -1,13 +1,13 @@
 function create() {
 
-    var X_POSITION =
+    X_POSITION =
     {
         'LEFT': 0,
         'CENTER': game.canvas.width / 2,
         'RIGHT': game.canvas.width,
     };
 
-    var Y_POSITION =
+    Y_POSITION =
     {
         'TOP': 0,
         'CENTER': game.canvas.height / 2,
@@ -88,6 +88,11 @@ function create() {
         scaleX: 1,
         scaleY: 1,
     });
+    
+    var btnLb = this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER + 160, 'btn_play');
+    btnLb.setDepth(10);
+    btnLb.setScale(0.5);
+    btnLb.setInteractive()
 
     var titleGame = this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER, 'title_game');
     titleGame.setDepth(10);
@@ -157,6 +162,12 @@ function create() {
         if (gameObject == btnPlay) {
             btnPlay.setTint(0xffffff);
             this.scene.start('scnPlay');
+            this.snd_touch.play();
+        }
+        
+        if (gameObject == btnLb) {
+            btnPlay.setTint(0xffffff);
+            this.scene.start('scnLB');
             this.snd_touch.play();
         }
 
