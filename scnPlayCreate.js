@@ -97,6 +97,9 @@ function create() {
         if (myScene.score > highscore) {
             localStorage["highscore"] = myScene.score;
         }
+        
+        let highscore_LB = localStorage["highscore_LB"] || 0;
+        localStorage["highscore_LB"] = myScene.score;
 
         myScene.scene.start('scnMenu');
     }
