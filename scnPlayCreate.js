@@ -111,9 +111,9 @@ function create() {
             ease: 'Power1',
             duration: 750,
             y: this.chara.y + 200
-        })
+        });
 
         this.snd_click[Math.floor((Math.random() * 2))].play();
-    }, this)
+    }, this);
 
 }
