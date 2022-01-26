@@ -107,7 +107,7 @@ function create() {
             // Parse the serialized data back into an aray of objects
             a = JSON.parse(localStorage.getItem('session')) || [];
             // Push the new data (whether it be an object or anything else) onto the array
-            a.unshift(score);
+            a.push(score);
             
             function bblSort(arr) {
                for (var i = 0; i < arr.length; i++) {
@@ -125,7 +125,7 @@ function create() {
             
             a.reverse();
             if(a.length > 5){
-                a.shift();
+                a.pop();
             }
             
             localStorage.setItem('session', JSON.stringify(a));
