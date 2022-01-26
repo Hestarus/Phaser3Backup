@@ -100,15 +100,14 @@ function create() {
         
         let highscore_LB = localStorage["highscore_LB"] || 0;
         localStorage["highscore_LB"] = myScene.score;
+        var scoreOcong = myScene.score;
         
         function SaveDataToLocalStorage(score) {
             var a = [];
             // Parse the serialized data back into an aray of objects
             a = JSON.parse(localStorage.getItem('session')) || [];
             // Push the new data (whether it be an object or anything else) onto the array
-            a.push(score);
-            
-            let scoreOcong = localStorage['session'];
+            a.unshift(score);
             
             function bblSort(arr) {
                for (var i = 0; i < arr.length; i++) {
@@ -129,8 +128,8 @@ function create() {
             }
             localStorage.setItem('session', JSON.stringify(a));
         }
+        SaveDataToLocalStorage(scoreOcong);
         
-        SaveDataToLocalStorage(localStorage["highscore_LB"]);
 
         myScene.scene.start('scnMenu');
     }
