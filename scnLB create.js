@@ -26,18 +26,56 @@ function create(){
     panel.setDepth(10);
     panel.setAlpha(1);
     
+    
+    var nilaiscore1 = localStorage["session"];
+    var nilaiscore2 = localStorage["session"];
+    var nilaiscore3 = localStorage["session"];
+    var nilaiscore4 = localStorage["session"];
+    var nilaiscore5 = localStorage["session"];
+
+
+    nilaiscore1[1];
+    nilaiscore2[3];
+    nilaiscore3[5];
+    nilaiscore4[7];
+    nilaiscore5[9];
+
     var highscoreLB = localStorage["highscore_LB"];
-    var label_score = this.add.text(panel.x - 85, panel.y -170, "Score Terakhir: "+ highscoreLB);
-    label_score.setOrigin(0.5);
-    label_score.setDepth(10);
-    label_score.setFontSize(30);
-    label_score.setTint(0xff732e);
+    var label_score1 = this.add.text(panel.x, panel.y -170, "Score Ke 1: "+ nilaiscore1[1]);
+    label_score1.setOrigin(0.5);
+    label_score1.setDepth(10);
+    label_score1.setFontSize(40);
+    label_score1.setTint(0xff732e);
     
-   
+    var label_score2 = this.add.text(panel.x, panel.y -130, "Score Ke 2: "+ nilaiscore2[3]);
+    label_score2.setOrigin(0.5);
+    label_score2.setDepth(10);
+    label_score2.setFontSize(40);
+    label_score2.setTint(0xff732e);
     
+    var label_score3 = this.add.text(panel.x, panel.y -90, "Score Ke 3: "+ nilaiscore3[5]);
+    label_score3.setOrigin(0.5);
+    label_score3.setDepth(10);
+    label_score3.setFontSize(40);
+    label_score3.setTint(0xff732e);
     
+    var label_score4 = this.add.text(panel.x, panel.y -50, "Score Ke 4: "+ nilaiscore4[7]);
+    label_score4.setOrigin(0.5);
+    label_score4.setDepth(10);
+    label_score4.setFontSize(40);
+    label_score4.setTint(0xff732e);
     
+    var label_score5 = this.add.text(panel.x, panel.y -50, "Score Ke 4: "+ nilaiscore5[9]);
+    label_score4.setOrigin(0.5);
+    label_score4.setDepth(10);
+    label_score4.setFontSize(40);
+    label_score4.setTint(0xff732e);
     
+    //MEMASUKAN SCORE KE PANEL
+    var score = localStorage["session"];
+    for(var i = 0; i<10; i++){
+        console.log(score[i]);
+    }
     
     
     
