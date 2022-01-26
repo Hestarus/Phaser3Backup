@@ -123,9 +123,11 @@ function create() {
             bblSort(a);
         
             
-            if(a.length >= 5){
+            a.reverse();
+            if(a.length > 5){
                 a.shift();
             }
+            
             localStorage.setItem('session', JSON.stringify(a));
         }
         SaveDataToLocalStorage(scoreOcong);
