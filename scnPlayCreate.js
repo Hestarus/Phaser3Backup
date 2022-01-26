@@ -100,6 +100,37 @@ function create() {
         
         let highscore_LB = localStorage["highscore_LB"] || 0;
         localStorage["highscore_LB"] = myScene.score;
+        
+        function SaveDataToLocalStorage(score) {
+            var a = [];
+            // Parse the serialized data back into an aray of objects
+            a = JSON.parse(localStorage.getItem('session')) || [];
+            // Push the new data (whether it be an object or anything else) onto the array
+            a.push(score);
+            
+            let scoreOcong = localStorage['session'];
+            
+            function bblSort(arr) {
+               for (var i = 0; i < arr.length; i++) {
+                    for (var j = 0; j < (arr.length - i - 1); j++) {
+                        if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j]
+                        arr[j] = arr[j + 1]
+                        arr[j + 1] = temp
+                        }
+                    }
+                }
+             }
+            bblSort(a);
+        
+            
+            if(a.length >= 5){
+                a.shift();
+            }
+            localStorage.setItem('session', JSON.stringify(a));
+        }
+        
+        SaveDataToLocalStorage(localStorage["highscore_LB"]);
 
         myScene.scene.start('scnMenu');
     }
