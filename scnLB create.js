@@ -78,9 +78,10 @@ function create(){
     //MEMASUKAN SCORE KE PANEL
     
     
-    var btnBack = this.add.image(panel.x + 210, Y_POSITION.CENTER, 'btn_play');
+    var btnBack = this.add.image(panel.x, Y_POSITION.CENTER+ 200, 'btn_play');
     btnBack.setScale(0.5);
     btnBack.setInteractive();
+    btnBack.setDepth(10);
     
     
     this.input.on('gameobjectup', function (pointer, gameObject) {
