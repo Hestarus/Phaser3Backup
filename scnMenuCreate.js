@@ -20,7 +20,8 @@ function create() {
         snd_ambience.setVolume(0.35);
         snd_ambience.play();
     }
-
+    
+    
     // membuat variabel sound lain
     this.snd_touch = this.sound.add('snd_touch');
     var snd_transisi = this.sound.add('snd_transisi_menu');
@@ -110,7 +111,13 @@ function create() {
             snd_transisi.play();
         }
     });
-
+    
+    var warning = this.add.text(X_POSITION.CENTER, Y_POSITION.CENTER + 350, "Pastikan untuk bermain dahulu sebelum menekan tombol leaderboard");
+    warning.setTint(0xff732e);
+    warning.setFontSize(20);
+    warning.setDepth(10);
+    warning.setOrigin(0.5);
+    
     //=======Menampung Nilai Tertinggi=====
     var skorTertinggi = localStorage["highscore"] || 0;
 
@@ -168,7 +175,7 @@ function create() {
         if (gameObject == btnLb) {
             btnPlay.setTint(0xffffff);
             this.scene.start('scnLB');
-            this.snd_touch.play();
+            this.snd_touch.play
         }
 
     }, this);
