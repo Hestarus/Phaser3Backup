@@ -93,25 +93,8 @@ function create() {
 
     this.gameOver = function () {
         let highscore   = localStorage["highscore"] || 0;
-        let highscore2  = localStorage["highscore2"] || 0;
-        let highscore3  = localStorage["highscore3"] || 0;
-        let highscore4  = localStorage["highscore4"] || 0;
-        let highscore5  = localStorage["highscore5"] || 0;
-
         if (myScene.score > highscore) {
             localStorage["highscore"] = myScene.score;
-        }
-        if (myScene.score > highscore) {
-            localStorage["highscore2"] = myScene.score;
-        }
-        if (myScene.score <= highscore) {
-            localStorage["highscore3"] = myScene.score;
-        }
-        if (myScene.score <= highscore) {
-            localStorage["highscore4"] = myScene.score;
-        }
-        if (myScene.score <= highscore) {
-            localStorage["highscore5"] = myScene.score;
         }
         
         let highscore_LB = localStorage["highscore_LB"] || 0;
@@ -120,9 +103,7 @@ function create() {
         
         function SaveDataToLocalStorage(score) {
             var a = [];
-            // Parse the serialized data back into an aray of objects
             a = JSON.parse(localStorage.getItem('session')) || [];
-            // Push the new data (whether it be an object or anything else) onto the array
             a.push(score);
             
             function bblSort(arr) {
