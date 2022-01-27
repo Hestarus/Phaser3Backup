@@ -65,11 +65,11 @@ function create(){
     label_score4.setFontSize(40);
     label_score4.setTint(0xff732e);
     
-    var label_score5 = this.add.text(panel.x, panel.y -50, "Score Ke 4: "+ nilaiscore5[9]);
-    label_score4.setOrigin(0.5);
-    label_score4.setDepth(10);
-    label_score4.setFontSize(40);
-    label_score4.setTint(0xff732e);
+    var label_score5 = this.add.text(panel.x, panel.y + -10, "Score Ke 5: "+ nilaiscore5[9]);
+    label_score5.setOrigin(0.5);
+    label_score5.setDepth(10);
+    label_score5.setFontSize(40);
+    label_score5.setTint(0xff732e);
     
     //MEMASUKAN SCORE KE PANEL
     var score = localStorage["session"];
