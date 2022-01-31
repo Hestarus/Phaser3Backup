@@ -20,11 +20,28 @@ function create(){
         snd_ambience.play();
     }
     
-    this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER, 'bg_start');
+    this.backgrounds = [];
+
+    var bg_x = 1366 / 2;
+
+    for (let i = 0; i < 3; i++) {
+        var bg_awal = [];
+        var BG = this.add.image(bg_x, 768 / 2, 'bg_start');
+        BG.setData('kecepatan', 2); //2
+        bg_awal.push(BG);
+        this.backgrounds.push(bg_awal);
+        bg_x += 1366
+    }
+    
+    var title = this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER - 220, 'title_game');
+    title.setDepth(20)
+    
+    
+    // this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER, 'bg_start');
     var panel = this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER, 'panel');
     panel.setOrigin(0.5);
     panel.setDepth(10);
-    panel.setAlpha(1);
+    panel.setAlpha(0.8);
     
     
     var nilaiscore1 = localStorage["session"];
@@ -40,31 +57,31 @@ function create(){
     var scoreData = JSON.parse(retrievedData);
     console.log(scoreData);
 
-        let label_score1 = this.add.text(panel.x, panel.y -170, "Score Ke 1: "+ scoreData[0]);
+        let label_score1 = this.add.text(panel.x, panel.y -90, "Score Ke 1: "+ scoreData[0]);
         label_score1.setOrigin(0.5);
         label_score1.setDepth(10);
         label_score1.setFontSize(40);
         label_score1.setTint(0xff732e);
         
-        let label_score2 = this.add.text(panel.x, panel.y -130, "Score Ke 2: "+ scoreData[1]);
+        let label_score2 = this.add.text(panel.x, panel.y -50, "Score Ke 2: "+ scoreData[1]);
         label_score2.setOrigin(0.5);
         label_score2.setDepth(10);
         label_score2.setFontSize(40);
         label_score2.setTint(0xff732e);
         
-        let label_score3 = this.add.text(panel.x, panel.y -90, "Score Ke 3: "+ scoreData[2]);
+        let label_score3 = this.add.text(panel.x, panel.y -10, "Score Ke 3: "+ scoreData[2]);
         label_score3.setOrigin(0.5);
         label_score3.setDepth(10);
         label_score3.setFontSize(40);
         label_score3.setTint(0xff732e);
         
-        let label_score4 = this.add.text(panel.x, panel.y -50, "Score Ke 4: "+ scoreData[3]);
+        let label_score4 = this.add.text(panel.x, panel.y +30, "Score Ke 4: "+ scoreData[3]);
         label_score4.setOrigin(0.5);
         label_score4.setDepth(10);
         label_score4.setFontSize(40);
         label_score4.setTint(0xff732e);
         
-        let label_score5 = this.add.text(panel.x, panel.y + -10, "Score Ke 5: "+ scoreData[4]);
+        let label_score5 = this.add.text(panel.x, panel.y + 70, "Score Ke 5: "+ scoreData[4]);
         label_score5.setOrigin(0.5);
         label_score5.setDepth(10);
         label_score5.setFontSize(40);
@@ -78,8 +95,8 @@ function create(){
     //MEMASUKAN SCORE KE PANEL
     
     
-    var btnBack = this.add.image(panel.x, Y_POSITION.CENTER+ 200, 'btn_play');
-    btnBack.setScale(0.5);
+    var btnBack = this.add.image(panel.x, Y_POSITION.CENTER+ 200, 'back_btn');
+    btnBack.setScale(0.7);
     btnBack.setInteractive();
     btnBack.setDepth(10);
     
