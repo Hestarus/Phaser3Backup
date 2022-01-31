@@ -21,6 +21,23 @@ function create() {
         snd_ambience.play();
     }
     
+    this.backgrounds = [];
+
+    var bg_x = 1366 / 2;
+
+    for (let i = 0; i < 3; i++) {
+        var bg_awal = [];
+        var BG = this.add.image(bg_x, 768 / 2, 'bg_start');
+        BG.setData('kecepatan', 2); //2
+        bg_awal.push(BG);
+        this.backgrounds.push(bg_awal);
+        bg_x += 1366
+    }
+    
+    //=====MENAMBAHKAN HANTU=====
+    this.halangan = [];
+    this.timerHalangan = 0;
+    
     
     // membuat variabel sound lain
     this.snd_touch = this.sound.add('snd_touch');
@@ -30,7 +47,7 @@ function create() {
     var btnClicked = false;
 
     // menambahkan background ke dalam scene
-    this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER, 'bg_start');
+    // this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER, 'bg_start');
 
     var spnCoin = this.add.spine(X_POSITION.CENTER, 100, 'spn_chara', 'animation', true);
     spnCoin.setScale(0.5);
@@ -44,7 +61,7 @@ function create() {
 
     const sprite = this.add.sprite(270, Y_POSITION.CENTER + 150, 'sps_mummy').setScale(4);
     sprite.play({ key: 'walk', repeat: -1 })
-
+    
     var particleL = this.add.particles('ptc_flares');
     particleL.setVisible(false);
     particleL.createEmitter({
@@ -90,10 +107,21 @@ function create() {
         scaleY: 1,
     });
     
-    var btnLb = this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER + 160, 'btn_play');
-    btnLb.setDepth(10);
-    btnLb.setScale(0.5);
-    btnLb.setInteractive()
+    var btnLb = this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER + 160, 'btn_Lb');
+    
+    if(localStorage['session'] == null){
+        btnLb.setDepth(10);
+        btnLb.setScale(0.8);
+        // btnLb.setInteractive() 
+    }
+    else{
+        btnLb.setDepth(10);
+        btnLb.setScale(0.8);
+        btnLb.setInteractive()
+    }
+    
+    
+    
 
     var titleGame = this.add.image(X_POSITION.CENTER, Y_POSITION.CENTER, 'title_game');
     titleGame.setDepth(10);
@@ -133,6 +161,25 @@ function create() {
     lblSkor.setDepth(10);
     lblSkor.setFontSize(30);
     lblSkor.setTint(0xff732e);
+    
+    this.input.on('gameobjectover', function (pointer, gameObject) {
+        console.log("Scene Menu | Object Over");
+
+        if (gameObject == btnLb) {
+            btnLb.setTint(0x616161);
+        }
+
+    }, this);
+
+    this.input.on('gameobjectout', function (pointer, gameObject) {
+        console.log("Scene Menu | Object Out");
+
+        if (gameObject == btnLb) {
+            btnLb.setTint(0xffffff);
+        }
+
+    }, this);
+    
 
     // menambahkan input user
     this.input.on('gameobjectover', function (pointer, gameObject) {
