@@ -17,6 +17,10 @@ function create() {
     this.timerHalangan = 0;
     this.halangan = [];
     this.backgrounds = [];
+        //===========MENAMBAHKAN SESAJEN==================
+    this.timerSajen = 0;
+    this.sajen = [];
+
 
     var bg_x = 1366 / 2;
 
@@ -76,6 +80,7 @@ function create() {
             myScene.trail.setVisible(true)
         }
     });
+    
 
     //SUARA KETIKA BERTABRAKAN
     this.snd_dead = this.sound.add('snd_dead');
@@ -92,18 +97,33 @@ function create() {
     //Menambahkan panel score
     this.score = 0;
 
-    this.panel_score = this.add.image(X_POSITION.CENTER, 60, 'panel_skor');
+    this.panel_score = this.add.image(X_POSITION.LEFT + 200, 60, 'panel_skor');
     this.panel_score.setOrigin(0.5);
     this.panel_score.setDepth(10);
     this.panel_score.setAlpha(0.8);
 
-    this.label_score = this.add.text(this.panel_score.x + 25, this.panel_score.y, this.score);
+    this.label_score = this.add.text(this.panel_score.x + 25, this.panel_score.y, "Score: " + this.score);
     this.label_score.setOrigin(0.5);
     this.label_score.setDepth(10);
     this.label_score.setFontSize(30);
     this.label_score.setTint(0xff732e);
 
+    // MENAMBAHKAN SAJEN SCORE
+    this.sajenScore = 0;
+    
+    this.panel_sajen_score = this.add.image(X_POSITION.RIGHT - 200, 60, 'panel_skor');
+    this.panel_sajen_score.setOrigin(0.5);
+    this.panel_sajen_score.setDepth(10);
+    this.panel_sajen_score.setAlpha(0.8);
 
+    this.label_sajen_score = this.add.text(this.panel_sajen_score.x + 25, this.panel_sajen_score.y,"Sajen: " + this.sajenScore);
+    this.label_sajen_score.setOrigin(0.5);
+    this.label_sajen_score.setDepth(10);
+    this.label_sajen_score.setFontSize(30);
+    this.label_sajen_score.setTint(0xff732e);
+    
+    
+    
     this.gameOver = function () {
         let highscore   = localStorage["highscore"] || 0;
         if (myScene.score > highscore) {
