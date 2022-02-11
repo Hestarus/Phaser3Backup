@@ -56,44 +56,71 @@ function create(){
     var retrievedData = localStorage.getItem("session");
     var scoreData = JSON.parse(retrievedData);
     console.log(scoreData);
-
-        let label_score1 = this.add.text(panel.x, panel.y -90, "Score Ke 1: "+ scoreData[0]);
-        label_score1.setOrigin(0.5);
-        label_score1.setDepth(10);
-        label_score1.setFontSize(40);
-        label_score1.setTint(0xff732e);
-        
-        let label_score2 = this.add.text(panel.x, panel.y -50, "Score Ke 2: "+ scoreData[1]);
-        label_score2.setOrigin(0.5);
-        label_score2.setDepth(10);
-        label_score2.setFontSize(40);
-        label_score2.setTint(0xff732e);
-        
-        let label_score3 = this.add.text(panel.x, panel.y -10, "Score Ke 3: "+ scoreData[2]);
-        label_score3.setOrigin(0.5);
-        label_score3.setDepth(10);
-        label_score3.setFontSize(40);
-        label_score3.setTint(0xff732e);
-        
-        let label_score4 = this.add.text(panel.x, panel.y +30, "Score Ke 4: "+ scoreData[3]);
-        label_score4.setOrigin(0.5);
-        label_score4.setDepth(10);
-        label_score4.setFontSize(40);
-        label_score4.setTint(0xff732e);
-        
-        let label_score5 = this.add.text(panel.x, panel.y + 70, "Score Ke 5: "+ scoreData[4]);
-        label_score5.setOrigin(0.5);
-        label_score5.setDepth(10);
-        label_score5.setFontSize(40);
-        label_score5.setTint(0xff732e);    
     
     
+    var scoreVar1 = 0;
+    var scoreVar2 = 0;
+    var scoreVar3 = 0;
+    var scoreVar4 = 0;
+    var scoreVar5 = 0;
     
+    if(scoreData == null){
+        // scoreVar1 = 0;
+        scoreData = 0;
+        scoreVar1 = 0;
+    }
+    if(scoreData[0] != null){
+        scoreVar1 = scoreData[0];
+    }
     
+    if(scoreData[1] != null){
+        scoreVar2 = scoreData[1];
+    }
+    
+    if(scoreData[2] != null){
+        scoreVar3 = scoreData[2];
+    }
+    
+    if(scoreData[3] != null){
+        scoreVar4 = scoreData[3];
+    }
+    
+    if(scoreData[4] != null){
+        scoreVar5 = scoreData[4];
+    }
         
+    let label_score1 = this.add.text(panel.x, panel.y -90, "Score Ke 1: "+ scoreVar1);
+    label_score1.setOrigin(0.5);
+    label_score1.setDepth(10);
+    label_score1.setFontSize(40);
+    label_score1.setTint(0xff732e);
     
+    let label_score2 = this.add.text(panel.x, panel.y -50, "Score Ke 2: "+ scoreVar2);
+    label_score2.setOrigin(0.5);
+    label_score2.setDepth(10);
+    label_score2.setFontSize(40);
+    label_score2.setTint(0xff732e);
+    
+    let label_score3 = this.add.text(panel.x, panel.y -10, "Score Ke 3: "+ scoreVar3);
+    label_score3.setOrigin(0.5);
+    label_score3.setDepth(10);
+    label_score3.setFontSize(40);
+    label_score3.setTint(0xff732e);
+    
+    let label_score4 = this.add.text(panel.x, panel.y +30, "Score Ke 4: "+ scoreVar4);
+    label_score4.setOrigin(0.5);
+    label_score4.setDepth(10);
+    label_score4.setFontSize(40);
+    label_score4.setTint(0xff732e);
+    
+    let label_score5 = this.add.text(panel.x, panel.y + 70, "Score Ke 5: "+ scoreVar5);
+    label_score5.setOrigin(0.5);
+    label_score5.setDepth(10);
+    label_score5.setFontSize(40);
+    label_score5.setTint(0xff732e);  
     //MEMASUKAN SCORE KE PANEL
     
+    console.log(scoreData[2]);
     
     var btnBack = this.add.image(panel.x, Y_POSITION.CENTER+ 200, 'back_btn');
     btnBack.setScale(0.7);
