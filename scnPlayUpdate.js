@@ -1,4 +1,18 @@
 function update() {
+     X_POSITION =
+    {
+        'LEFT': 0,
+        'CENTER': game.canvas.width / 2,
+        'RIGHT': game.canvas.width,
+    };
+
+    Y_POSITION =
+    {
+        'TOP': 0,
+        'CENTER': game.canvas.height / 2,
+        'BOOTOM': game.canvas.height,
+    };
+    
     if (this.isGameRunning) {
         this.chara.y -= 5;
         if (this.chara.y > 690) this.chara.y = 690;
@@ -14,7 +28,7 @@ function update() {
         }
         if (this.timerHalangan == 0) {
             var acak_y = Math.floor((Math.random() * 680) + 60);
-            var halanganBaru = this.add.image(1500, acak_y, 'obstc');
+            var halanganBaru = this.add.image(X_POSITION.RIGHT, acak_y, 'obstc');
             halanganBaru.setOrigin(0.0);
             halanganBaru.setData("status_aktif", true);
             halanganBaru.setData("kecepatan", Math.floor((Math.random() * 15) + 10));
