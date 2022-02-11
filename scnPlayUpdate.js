@@ -37,6 +37,7 @@ function update() {
             this.halangan.push(halanganBaru);
             this.timerHalangan = Math.floor((Math.random() * 50) + 10);
         }
+        
         for (let i = this.halangan.length - 1; i >= 0; i--) {
             this.halangan[i].x -= this.halangan[i].getData("kecepatan");
 
@@ -48,11 +49,46 @@ function update() {
             }
         }
         this.timerHalangan--;
+        
+        //SAJEN
+        if (this.timerHalangan == 0) {
+            var sajen_y = Math.floor((Math.random() * 680) + 60);
+            var sajenBaru = this.add.image(X_POSITION.RIGHT, sajen_y, 'sajen');
+            sajenBaru.setOrigin(0.0);
+            sajenBaru.setData("status_aktif", true);
+            sajenBaru.setData("kecepatan", 15);
+            sajenBaru.setDepth(5);
+
+            this.sajen.push(sajenBaru);
+            this.timerSajen = Math.floor((Math.random() * 200) + 150);
+        }
+        
+        for (let i = this.sajen.length - 1; i >= 0; i--) {
+            this.sajen[i].x -= this.sajen[i].getData("kecepatan");
+
+            if (this.sajen[i].x < -200) {
+                this.sajen[i].destroy();
+                this.sajen.splice(i, 1);
+                break;
+            }
+        }
+        this.timerSajen--;
+        
+        for(let sajenScore = this.sajen.length -1; sajenScore >= 0; sajenScore--){
+            if (this.chara.getBounds().contains(this.sajen[sajenScore].x, this.sajen[sajenScore].y)){
+                this.sajen[sajenScore].destroy();
+                this.sajen.splice(sajenScore, 1);
+                this.sajenScore++;
+                this.label_sajen_score.setText("Sajen: "+ this.sajenScore);
+                break;
+            }
+        }
+        
         for (var i = this.halangan.length - 1; i >= 0; i--) {
             if (this.chara.x > this.halangan[i].x + 50 && this.halangan[i].getData("status_aktif") == true) {
                 this.halangan[i].setData("status_aktif", false);
                 this.score++;
-                this.label_score.setText(this.score);
+                this.label_score.setText("Score: " + this.score);
             }
         }
         for (let i = this.halangan.length - 1; i >= 0; i--) {
