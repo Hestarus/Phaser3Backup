@@ -1,5 +1,19 @@
 function create() {
+    
+    X_POSITION =
+    {
+        'LEFT': 0,
+        'CENTER': game.canvas.width / 2,
+        'RIGHT': game.canvas.width,
+    };
 
+    Y_POSITION =
+    {
+        'TOP': 0,
+        'CENTER': game.canvas.height / 2,
+        'BOOTOM': game.canvas.height,
+    };
+    
     this.timerHalangan = 0;
     this.halangan = [];
     this.backgrounds = [];
@@ -78,7 +92,7 @@ function create() {
     //Menambahkan panel score
     this.score = 0;
 
-    this.panel_score = this.add.image(1024 / 2, 60, 'panel_skor');
+    this.panel_score = this.add.image(X_POSITION.CENTER, 60, 'panel_skor');
     this.panel_score.setOrigin(0.5);
     this.panel_score.setDepth(10);
     this.panel_score.setAlpha(0.8);
