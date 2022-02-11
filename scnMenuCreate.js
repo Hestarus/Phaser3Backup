@@ -21,6 +21,8 @@ function create() {
         snd_ambience.play();
     }
     
+
+    
     this.backgrounds = [];
 
     var bg_x = 1366 / 2;
@@ -112,7 +114,7 @@ function create() {
     if(localStorage['session'] == null){
         btnLb.setDepth(10);
         btnLb.setScale(0.8);
-        // btnLb.setInteractive() 
+        btnLb.setInteractive()
     }
     else{
         btnLb.setDepth(10);
@@ -139,12 +141,6 @@ function create() {
             snd_transisi.play();
         }
     });
-    
-    var warning = this.add.text(X_POSITION.CENTER, Y_POSITION.CENTER + 350, "Pastikan untuk bermain dahulu sebelum menekan tombol leaderboard");
-    warning.setTint(0xff732e);
-    warning.setFontSize(20);
-    warning.setDepth(10);
-    warning.setOrigin(0.5);
     
     //=======Menampung Nilai Tertinggi=====
     var skorTertinggi = localStorage["highscore"] || 0;
@@ -223,6 +219,9 @@ function create() {
             btnPlay.setTint(0xffffff);
             this.scene.start('scnLB');
             this.snd_touch.play
+            // var a = [];
+            // a = JSON.parse(localStorage.getItem('session')) || [];
+            // a.push(0,0,0,0);
         }
 
     }, this);
