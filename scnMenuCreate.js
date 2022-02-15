@@ -29,7 +29,7 @@ function create() {
 
     for (let i = 0; i < 3; i++) {
         var bg_awal = [];
-        var BG = this.add.image(bg_x, 768 / 2, 'bg_start');
+        var BG = this.add.image(bg_x, 768 / 2, 'bg_new');
         BG.setData('kecepatan', 2); //2
         bg_awal.push(BG);
         this.backgrounds.push(bg_awal);
