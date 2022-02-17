@@ -61,8 +61,11 @@ function create() {
         framerate: 16,
     })
 
-    const sprite = this.add.sprite(270, Y_POSITION.CENTER + 150, 'sps_mummy').setScale(4);
+    const sprite = this.add.sprite(X_POSITION.LEFT + 100, Y_POSITION.BOOTOM-90, 'sps_mummy').setScale(4);
     sprite.play({ key: 'walk', repeat: -1 })
+    
+    const sprite2 = this.add.sprite(X_POSITION.RIGHT - 100, Y_POSITION.BOOTOM-90, 'sps_mummy').setScale(4);
+    sprite2.play({ key: 'walk', repeat: -1 })
     
     var particleL = this.add.particles('ptc_flares');
     particleL.setVisible(false);
