@@ -89,31 +89,31 @@ function create(){
         scoreVar5 = scoreData[4];
     }
         
-    let label_score1 = this.add.text(panel.x, panel.y -90, "Score Ke 1: "+ scoreVar1);
+    let label_score1 = this.add.text(panel.x, panel.y -90, "Score Sajen ke 1: "+ scoreVar1);
     label_score1.setOrigin(0.5);
     label_score1.setDepth(10);
     label_score1.setFontSize(40);
     label_score1.setTint(0xff732e);
     
-    let label_score2 = this.add.text(panel.x, panel.y -50, "Score Ke 2: "+ scoreVar2);
+    let label_score2 = this.add.text(panel.x, panel.y -50, "Score Sajen Ke 2: "+ scoreVar2);
     label_score2.setOrigin(0.5);
     label_score2.setDepth(10);
     label_score2.setFontSize(40);
     label_score2.setTint(0xff732e);
     
-    let label_score3 = this.add.text(panel.x, panel.y -10, "Score Ke 3: "+ scoreVar3);
+    let label_score3 = this.add.text(panel.x, panel.y -10, "Score Sajen Ke 3: "+ scoreVar3);
     label_score3.setOrigin(0.5);
     label_score3.setDepth(10);
     label_score3.setFontSize(40);
     label_score3.setTint(0xff732e);
     
-    let label_score4 = this.add.text(panel.x, panel.y +30, "Score Ke 4: "+ scoreVar4);
+    let label_score4 = this.add.text(panel.x, panel.y +30, "Score Sajen Ke 4: "+ scoreVar4);
     label_score4.setOrigin(0.5);
     label_score4.setDepth(10);
     label_score4.setFontSize(40);
     label_score4.setTint(0xff732e);
     
-    let label_score5 = this.add.text(panel.x, panel.y + 70, "Score Ke 5: "+ scoreVar5);
+    let label_score5 = this.add.text(panel.x, panel.y + 70, "Score Sajen Ke 5: "+ scoreVar5);
     label_score5.setOrigin(0.5);
     label_score5.setDepth(10);
     label_score5.setFontSize(40);
