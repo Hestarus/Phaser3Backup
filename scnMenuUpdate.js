@@ -13,7 +13,7 @@ function update(){
 	
 	if (this.timerHalangan == 0) {
         var acak_y = Math.floor((Math.random() * 680) + 60);
-        var halanganBaru = this.add.image(1500, acak_y, 'ghost');
+        var halanganBaru = this.add.image(1600, acak_y, 'ghost');
         halanganBaru.setOrigin(0.0);
         halanganBaru.setData("status_aktif", true);
         halanganBaru.setData("kecepatan", Math.floor((Math.random() * 30) + 15));
