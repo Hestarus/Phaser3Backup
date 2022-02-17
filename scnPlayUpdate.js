@@ -31,7 +31,7 @@ function update() {
             var halanganBaru = this.add.image(X_POSITION.RIGHT, acak_y, 'obstc');
             halanganBaru.setOrigin(0.0);
             halanganBaru.setData("status_aktif", true);
-            halanganBaru.setData("kecepatan", Math.floor((Math.random() * 15) + 10));
+            halanganBaru.setData("kecepatan", Math.floor((Math.random() * 12) + 7));
             halanganBaru.setDepth(5);
 
             this.halangan.push(halanganBaru);
@@ -56,11 +56,11 @@ function update() {
             var sajenBaru = this.add.image(X_POSITION.RIGHT, sajen_y, 'sajen');
             sajenBaru.setOrigin(0.0);
             sajenBaru.setData("status_aktif", true);
-            sajenBaru.setData("kecepatan", 15);
+            sajenBaru.setData("kecepatan", 5);
             sajenBaru.setDepth(5);
 
             this.sajen.push(sajenBaru);
-            this.timerSajen = Math.floor((Math.random() * 200) + 150);
+            this.timerSajen = Math.floor((Math.random() * 150) + 300);
         }
         
         for (let i = this.sajen.length - 1; i >= 0; i--) {
