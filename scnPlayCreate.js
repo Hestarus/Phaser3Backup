@@ -20,7 +20,7 @@ function create() {
         //===========MENAMBAHKAN SESAJEN==================
     this.timerSajen = 0;
     this.sajen = [];
-
+    this.sajenScore = 0;
 
     var bg_x = 1366 / 2;
 
@@ -30,8 +30,8 @@ function create() {
         var BG = this.add.image(bg_x, 768 / 2, 'fg_loop_back');
         var FG = this.add.image(bg_x, 768 / 2, 'fg_loop');
 
-        BG.setData('kecepatan', 4); //2
-        FG.setData('kecepatan', 8); //4
+        BG.setData('kecepatan', 2); //2
+        FG.setData('kecepatan', 4); //4
         FG.setDepth(2);
 
         bg_awal.push(BG);
@@ -132,7 +132,7 @@ function create() {
         
         let highscore_LB = localStorage["highscore_LB"] || 0;
         localStorage["highscore_LB"] = myScene.score;
-        var scoreOcong = myScene.score;
+        var scoreOcong = myScene.sajenScore;
         
         function SaveDataToLocalStorage(score) {
             var a = [];
