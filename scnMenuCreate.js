@@ -30,8 +30,11 @@ function create() {
     for (let i = 0; i < 3; i++) {
         var bg_awal = [];
         var BG = this.add.image(bg_x, 768 / 2, 'bg_new');
-        BG.setData('kecepatan', 2); //2
+        var FG = this.add.image(bg_x, 768 / 2, 'bg_new')
+        BG.setData('kecepatan', 2);
+        FG.setData('kecepatan', 2);//2
         bg_awal.push(BG);
+        bg_awal.push(FG);
         this.backgrounds.push(bg_awal);
         bg_x += 1366
     }
@@ -209,6 +212,15 @@ function create() {
 
     }, this);
     // menambahkan deteksi objek selesai diklik
+    var enter = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+    
+    if(enter.isDown){
+            // btnPlay.setTint(0xffffff);
+            // this.scene.start('scnPlay');
+            // this.snd_touch.play();
+            console.log("enter")
+    }
+    
     this.input.on('gameobjectup', function (pointer, gameObject) {
         console.log("Scene Menu | Object End Click");
 
